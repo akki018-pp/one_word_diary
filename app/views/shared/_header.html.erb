@@ -1,0 +1,11 @@
+<header class="fixed top-0 left-0 w-full flex justify-between items-center z-50 bg-green-100 p-4 shadow">
+  <div>
+    <%= link_to image_tag("hitokoto_logo.png", class: "h-6 sm:h-9"), root_path %>
+  </div>
+
+  <nav class="space-x-4">
+    <%= link_to "About", root_path, class: "text-gray-700 hover:text-blue-500" %>
+    <%= link_to "新規登録", new_user_registration_path, class: "text-gray-700 hover:text-blue-500" %>
+    <%= link_to "ログイン", new_user_session_path, class: "text-gray-700 hover:text-blue-500" %>
+  </nav>
+</header>

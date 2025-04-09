@@ -1,0 +1,30 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+      edit: 編集
+      search: 検索
+      clear: クリア
+    label:
+      email: メールアドレス
+      password: パスワード
+  defaults:
+    create: 作成
+    post: 投稿
+    flash_message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
+  page:
+    top: トップページへ
+  home:
+    top:
+      title: ひとこと
+  header:
+    sign_up: 新規登録
+    login: ログイン
+    logout: ログアウト
