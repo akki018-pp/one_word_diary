@@ -24,6 +24,8 @@ ja:
   home:
     top:
       title: ひとこと
+    about:
+      title: アプリ紹介
   header:
     sign_up: 新規登録
     login: ログイン
