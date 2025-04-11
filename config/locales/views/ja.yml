@@ -27,9 +27,12 @@ ja:
       title: ひとこと
     about:
       title: アプリ紹介
-  boards:
+  posts:
     index:
       title: 今日のひとこと
+    new:
+      tweet: ひとこと
+      title: ひとことこぼす
   header:
     sign_up: 新規登録
     login: ログイン

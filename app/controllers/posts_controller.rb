@@ -1,5 +1,24 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(is_public: true).order(created_at: :desc).includes(:user)
+    @posts = Post.order(created_at: :desc).includes(:user)
+  end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:tweet)
   end
 end

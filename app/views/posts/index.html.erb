@@ -1,2 +1,16 @@
 <% content_for(:title, t('.title')) %>
-<h2 class="text-xl font-bold mb-4">今日のひとこと（あなた）</h2>
+
+<div class="flex flex-col items-center text-center">
+  <h2 class="text-2xl font-bold text-blue-600 mb-6">今日のひとこと</h2>
+
+  <ul class="space-y-4 mb-6 w-full max-w-xl">
+    <% @posts.each do |post| %>
+      <li class="relative bg-yellow-100 text-blue-900 text-lg font-semibold px-6 py-3 rounded-full shadow-md">
+        <%= post.tweet %><br>
+        <span class="absolute bottom-1 right-4 text-sm text-gray-600 font-normal">( <%= post.created_at.in_time_zone("Tokyo").strftime("%H:%M") %> )</span>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "ひとこと", new_post_path, class: "bg-blue-500 hover:bg-blue-600 text-white font-bold px-6 py-2 rounded-full shadow transition" %>
+</div>
