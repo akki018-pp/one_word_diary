@@ -33,6 +33,8 @@ ja:
     new:
       tweet: ひとこと
       title: ひとことこぼす
+    edit:
+      title: 言い間違い
   header:
     sign_up: 新規登録
     login: ログイン

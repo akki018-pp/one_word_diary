@@ -5,10 +5,12 @@
 
   <ul class="space-y-4 mb-6 w-full max-w-xl">
     <% @posts.each do |post| %>
-      <li class="relative bg-yellow-100 text-blue-900 text-lg font-semibold px-6 py-3 rounded-full shadow-md">
-        <%= post.tweet %><br>
-        <span class="absolute bottom-1 right-4 text-sm text-gray-600 font-normal">( <%= post.created_at.in_time_zone("Tokyo").strftime("%H:%M") %> )</span>
-      </li>
+      <%= link_to edit_post_path(post), class: "block" do %>
+        <li class="relative bg-yellow-100 text-blue-900 text-lg font-semibold px-6 py-3 rounded-full shadow-md">
+          <%= post.tweet %><br>
+          <span class="absolute bottom-1 right-4 text-sm text-gray-600 font-normal">( <%= post.created_at.in_time_zone("Tokyo").strftime("%H:%M") %> )</span>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 
