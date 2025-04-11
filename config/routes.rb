@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   }
   root 'home#top'
   get 'about', to: 'home#about', as: :about
+  resources :posts, only: %i[index]
 end

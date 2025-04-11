@@ -3,6 +3,12 @@
     <%= link_to image_tag("hitokoto_logo.png", class: "h-6 sm:h-9"), root_path %>
   </div>
 
+  <% if user_signed_in? %>
+    <p>ログイン中: <%= current_user.name %></p>
+  <% else %>
+    <p>ログインしていません</p>
+  <% end %>
+
   <nav class="space-x-4">
     <%= link_to "ひとこと日記って何？", about_path, class: "text-gray-700 hover:text-blue-500" %>
     <%= link_to "新規登録", new_user_registration_path, class: "text-gray-700 hover:text-blue-500" %>
