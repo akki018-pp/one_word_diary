@@ -23,7 +23,11 @@
   </head>
 
   <body class="min-h-screen flex flex-col" style="background-color: #FFD880;">
-    <%= render 'shared/header' %>
+    <% if user_signed_in? %>
+      <%= render 'shared/header' %>
+    <% else %>
+      <%= render 'shared/before_login_header' %>
+    <% end %>
     <main class="flex-grow pt-20 mb-24">
       <%= yield %>
     </main>

@@ -8,6 +8,7 @@ ja:
       search: 検索
       clear: クリア
     label:
+      name: 名前
       email: メールアドレス
       password: パスワード
   defaults:

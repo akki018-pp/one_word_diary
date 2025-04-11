@@ -2,6 +2,7 @@ ja:
   activerecord:
     attributes:
       user:
+        name: 名前
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
@@ -102,8 +103,10 @@ ja:
         update: 更新
         we_need_your_current_password_to_confirm_your_changes: 変更を反映するには現在のパスワードを入力してください
       new:
+        title: 新規登録
         placeholders:
-          email: 'メールアドレスを入力してください'
+          name: 'ユーザー名を入力'
+          email: '有効なメールアドレスを入力'
           password: '半角英数字記号(6文字以上)'
           username: '半角英数字および記号(._-~)'
           password_confirmation: 'パスワードを再入力'
@@ -133,7 +136,7 @@ ja:
         forgot_your_password: パスワードを忘れましたか？
         sign_in: ログイン
         sign_in_with_provider: "%{provider}でログイン"
-        sign_up: アカウント登録
+        sign_up: 新規登録
       minimum_password_length:
         other: "（%{count}字以上）"
     unlocks:
