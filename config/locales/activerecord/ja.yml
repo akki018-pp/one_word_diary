@@ -1,1 +1,8 @@
-ja: {}
+ja:
+  activerecord:
+    attributes:
+      post:
+        time_slot:
+          morning: 朝
+          afternoon: 昼
+          evening: 夜

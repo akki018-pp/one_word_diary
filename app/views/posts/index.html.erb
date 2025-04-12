@@ -1,18 +1,34 @@
 <% content_for(:title, t('.title')) %>
 
-<div class="flex flex-col items-center text-center">
-  <h2 class="text-2xl font-bold text-blue-600 mb-6">今日のひとこと</h2>
+<div class="flex flex-col items-center px-4">
+  <h2 class="text-2xl font-bold text-blue-600 my-6">あなたの今日の投稿一覧</h2>
 
-  <ul class="space-y-4 mb-6 w-full max-w-xl">
-    <% @posts.each do |post| %>
-      <%= link_to edit_post_path(post), class: "block" do %>
-        <li class="relative bg-yellow-100 text-blue-900 text-lg font-semibold px-6 py-3 rounded-full shadow-md">
-          <%= post.tweet %><br>
-          <span class="absolute bottom-1 right-4 text-sm text-gray-600 font-normal">( <%= post.created_at.in_time_zone("Tokyo").strftime("%H:%M") %> )</span>
-        </li>
+  <% @today_posts.each do |slot, posts| %>
+    <div class="mb-6 p-4 border border-gray-300 rounded w-full max-w-xl bg-white shadow">
+      <h3 class="text-xl font-bold mb-2"><%= t("time_slots.#{slot}") %></h3>
+
+      <% if current_time_slot != slot %>
+        <p class="text-gray-500 mb-2">この時間帯では投稿できません</p>
+      <% elsif current_user.posted_in?(slot) %>
+        <p class="text-green-600 mb-2">すでに投稿しました ✅</p>
+      <% else %>
+        <%= link_to "投稿する", new_post_path, class: "inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4" %>
       <% end %>
-    <% end %>
-  </ul>
 
-  <%= link_to "ひとこと", new_post_path, class: "bg-blue-500 hover:bg-blue-600 text-white font-bold px-6 py-2 rounded-full shadow transition" %>
+      <% if posts.any? %>
+        <ul class="space-y-4">
+          <% posts.each do |post| %>
+            <li>
+              <%= link_to edit_post_path(post), class: "block bg-yellow-100 text-blue-900 text-lg font-semibold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition" do %>
+                <%= post.tweet %><br>
+                <span class="text-sm text-gray-500"><%= l(post.created_at, format: :short) %></span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="text-gray-400">投稿がありません</p>
+      <% end %>
+    </div>
+  <% end %>
 </div>

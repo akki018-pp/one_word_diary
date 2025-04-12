@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.order(created_at: :desc).includes(:user)
+    @today_posts = current_user.posts_by_time_slot_for_today
   end
 
   def new
@@ -8,7 +8,11 @@ class PostsController < ApplicationController
   end
 
   def create
+    slot = current_time_slot
+
     @post = current_user.posts.build(post_params)
+    @post.time_slot = slot
+
     if @post.save
       redirect_to posts_path
     else

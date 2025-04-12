@@ -39,3 +39,7 @@ ja:
     sign_up: 新規登録
     login: ログイン
     logout: ログアウト
+  time_slots:
+    morning: 朝（6:00〜11:59）
+    afternoon: 昼（12:00〜17:59）
+    evening: 夜（18:00〜23:59）

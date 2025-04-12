@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_09_141815) do
+ActiveRecord::Schema[7.1].define(version: 2025_04_11_095935) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pg_catalog.plpgsql"
+  enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
     t.string "tweet", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "time_slot", default: 0, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
