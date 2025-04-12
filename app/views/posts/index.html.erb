@@ -1,16 +1,16 @@
 <% content_for(:title, t('.title')) %>
 
 <div class="flex flex-col items-center px-4">
-  <h2 class="text-2xl font-bold text-blue-600 my-6">あなたの今日の投稿一覧</h2>
+  <h2 class="text-2xl font-bold text-blue-600 my-6">あなたの今日のひとことたち</h2>
 
   <% @today_posts.each do |slot, posts| %>
     <div class="mb-6 p-4 border border-gray-300 rounded w-full max-w-xl bg-white shadow">
       <h3 class="text-xl font-bold mb-2"><%= t("time_slots.#{slot}") %></h3>
 
       <% if current_time_slot != slot %>
-        <p class="text-gray-500 mb-2">この時間帯では投稿できません</p>
+        <p class="text-gray-500 mb-2">この時間帯ではひとこと言えません</p>
       <% elsif current_user.posted_in?(slot) %>
-        <p class="text-green-600 mb-2">すでに投稿しました ✅</p>
+        <p class="text-green-600 mb-2">すでにひとこと言いました ✅</p>
       <% else %>
         <%= link_to "投稿する", new_post_path, class: "inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4" %>
       <% end %>
@@ -27,7 +27,7 @@
           <% end %>
         </ul>
       <% else %>
-        <p class="text-gray-400">投稿がありません</p>
+        <p class="text-gray-400">ひとことがありません</p>
       <% end %>
     </div>
   <% end %>

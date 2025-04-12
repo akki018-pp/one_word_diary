@@ -15,11 +15,11 @@ ja:
     create: 作成
     post: 投稿
     flash_message:
-      created: "%{item}を作成しました"
-      not_created: "%{item}を作成できませんでした"
-      updated: "%{item}を更新しました"
-      not_updated: "%{item}を更新できませんでした"
-      deleted: "%{item}を削除しました"
+      created: "ひとことをつむぎました"
+      not_created: "ひとこと言い損ねました"
+      updated: "改めてひとことをつむぎました"
+      not_updated: "ひとことはその場にとどまりました"
+      deleted: "ひとことは風に消えました"
   page:
     top: トップページへ
   home:

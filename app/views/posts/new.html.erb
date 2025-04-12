@@ -9,8 +9,9 @@
       <%= f.text_field :tweet, class: "w-144 border border-gray-300 bg-white rounded-full px-6 py-4 text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400", placeholder: t('.tweet') %>
     </div>
 
-    <div class="flex justify-center">
-      <%= f.submit "投稿する", class: "bg-blue-500 hover:bg-blue-600 text-white font-bold px-8 py-3 rounded-full shadow transition" %>
+    <div class="flex flex-col text-center items-center">
+      <%= f.submit "ひとことこぼす", class: "w-48 bg-blue-500 hover:bg-blue-600 text-white font-bold px-8 py-3 mb-5 rounded-full shadow transition" %>
+      <%= link_to "言うのやめた", posts_path, class: "w-48 mb-5 bg-green-400 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full" %>
     </div>
   <% end %>
 </div>
