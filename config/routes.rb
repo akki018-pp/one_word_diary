@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   }
   root 'home#top'
   get 'about', to: 'home#about', as: :about
-  resources :posts, only: %i[index new create edit update destroy]
+  resources :posts, only: %i[index new create edit update destroy] do
+    collection do
+      get :log
+    end
+  end
 end

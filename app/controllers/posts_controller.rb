@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @today_posts = current_user.posts_by_time_slot_for_today
   end
@@ -40,6 +41,10 @@ class PostsController < ApplicationController
     post.destroy!
     flash[:notice] = t('defaults.flash_message.deleted')
     redirect_to posts_path, status: :see_other
+  end
+
+  def log
+    @posts = current_user.posts.order(created_at: :desc).group_by { |post| post.created_at.to_date }
   end
 
   private
