@@ -47,6 +47,11 @@ class PostsController < ApplicationController
     @posts = current_user.posts.order(created_at: :desc).group_by { |post| post.created_at.to_date }
   end
 
+  def timeline
+    @slot = current_time_slot
+    @posts = Post.where.not(user: current_user).for_today_slot(@slot) if @slot
+  end
+
   private
 
   def post_params

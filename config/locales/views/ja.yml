@@ -37,6 +37,8 @@ ja:
       title: 言い間違い
     log:
       title: ひとことの跡
+    timeline:
+      title: みんなのひとこと
   header:
     sign_up: 新規登録
     login: ログイン

@@ -1,7 +1,7 @@
 <% content_for(:title, t('.title')) %>
 
 <div class="flex flex-col items-center px-4">
-  <h2 class="text-2xl font-bold text-blue-600 my-6">あなたの今日のひとことたち</h2>
+  <h2 class="text-2xl font-bold text-blue-600 my-6">あなたの今日のひとこと</h2>
 
   <% @today_posts.each do |slot, posts| %>
     <div class="mb-6 p-4 border border-gray-300 rounded w-full max-w-xl bg-white shadow">
@@ -31,5 +31,8 @@
       <% end %>
     </div>
   <% end %>
-  <%= link_to 'ひとことの跡', log_posts_path, class: "bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition" %>
+  <div class="flex flex-col text-center ">
+    <%= link_to 'ひとことの跡', log_posts_path, class: "bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 mb-4 rounded transition" %>
+    <%= link_to 'みんなのひとこと', timeline_posts_path, class: "bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition" %>
+  </div>
 </div>
